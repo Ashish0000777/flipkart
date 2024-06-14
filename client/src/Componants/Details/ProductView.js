@@ -48,7 +48,7 @@ const ProductView = ({ product }) => {
     let serverData = {
       amount : product.price.cost
     }
-    let url = "https://flipcart-backend-api-production.up.railway.app/payment/gen-order";
+    let url = "https://flipkart-1-sw9k.onrender.com/payment/gen-order";
     let { data } = await axios.post(url , serverData);
 
     let order = data.order;
@@ -68,7 +68,7 @@ const ProductView = ({ product }) => {
           razorpay_order_id: response.razorpay_order_id,
           razorpay_signature: response.razorpay_signature,
         };
-        let url = "https://flipcart-backend-api-production.up.railway.app/payment/verify";
+        let url = "https://flipkart-1-sw9k.onrender.com/payment/verify";
         let { data } = await axios.post(url, Send_data);
         if (data.status === true) {
           Swal.fire({
